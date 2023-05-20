@@ -1,7 +1,9 @@
 # Metasploit in Docker
+
 ## Getting Started
 
 To run `msfconsole`
+
 ```bash
 ./docker/bin/msfconsole
 ```
@@ -12,7 +14,9 @@ or
 docker-compose build
 docker-compose run --rm --service-ports -e MSF_UID=$(id -u) -e MSF_GID=$(id -g) ms
 ```
+
 To run `msfvenom`
+
 ```bash
 ./docker/bin/msfvenom
 ```
@@ -54,4 +58,5 @@ override.
 ```bash
 echo "COMPOSE_FILE=./docker-compose.yml:./docker-compose.override.yml:./docker-compose.local.override.yml" >> .env
 ```
+
 Now you should be able get reverse shells working

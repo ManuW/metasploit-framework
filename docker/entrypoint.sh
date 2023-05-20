@@ -23,6 +23,8 @@ else
     adduser -u $MSF_UID -D $MSF_USER -g $MSF_USER -G $MSF_GROUP $MSF_USER
     # add user to metasploit group so it can read the source
     addgroup $MSF_USER $METASPLOIT_GROUP
+    echo '%wheel ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/wheel
+    adduser $MSF_USER wheel
     su-exec $MSF_USER "$@"
   # fall back to root exec if the user id already exists
   else
