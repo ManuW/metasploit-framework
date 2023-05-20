@@ -1,7 +1,7 @@
 # This file maps the files within `metasploit-framework.wiki/` to the navigational menu
 # Modify this file to change the doc site's navigation/hierarchy
 
-# @param path [String] the prefix to remove from a string
+# @param prefix [String] The prefix to remove from a string
 # @return [proc<String, String>] When called with a string, the returned string has the prefix removed
 def without_prefix(prefix)
   proc { |value| value.sub(/^#{prefix}/, '') }
@@ -525,6 +525,10 @@ NAVIGATION_CONFIG = [
               },
               {
                 path: 'How-to-use-command-stagers.md'
+              },
+              {
+                path: 'How-to-use-fetch-payloads.md',
+                title: 'How to use Fetch Payloads'
               },
               {
                 old_wiki_path: 'How-to-write-a-check()-method.md',
